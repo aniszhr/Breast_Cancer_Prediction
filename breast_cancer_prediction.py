@@ -65,7 +65,7 @@ model.compile(optimizer='adam', loss='categorical_crossentropy',metrics=['accura
 history = model.fit(x_train,y_train,validation_data=(x_test,y_test),batch_size=32,epochs=100)
 
 #%%
-base_log_path = r"C:\Users\kong.kah.chun\Documents\KKC_Documents\Deep Learning TTT\TensorFlow Deep Learning\Tensorboard\p1_log"
+base_log_path = r"C:\Users\ANEH\Documents\Deep Learning Class\TensorFlow Deep Learning\Tensorboard\project1_log"
 log_path = os.path.join(base_log_path, datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
 tb_callback = tf.keras.callbacks.TensorBoard(log_dir=log_path)
 es_callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss',patience=5,verbose=2)
