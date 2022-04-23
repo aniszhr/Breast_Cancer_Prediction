@@ -63,3 +63,18 @@ model.summary()
 model.compile(optimizer='adam', loss='categorical_crossentropy',metrics=['accuracy'])
 
 history = model.fit(x_train,y_train,validation_data=(x_test,y_test),batch_size=32,epochs=100)
+
+#%%
+base_log_path = r"C:\Users\kong.kah.chun\Documents\KKC_Documents\Deep Learning TTT\TensorFlow Deep Learning\Tensorboard\p1_log"
+log_path = os.path.join(base_log_path, datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
+tb_callback = tf.keras.callbacks.TensorBoard(log_dir=log_path)
+es_callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss',patience=5,verbose=2)
+EPOCHS = 100
+BATCH_SIZE=32
+history = model.fit(x_train,y_train,validation_data=(x_val,y_val),batch_size=BATCH_SIZE,epochs=EPOCHS,callbacks=[tb_callback,es_callback])
+
+#%%
+#Evaluate with test data for wild testing
+test_result = model.evaluate(x_test,y_test,batch_size=BATCH_SIZE)
+print(f"Test loss = {test_result[0]}")
+print(f"Test accuracy = {test_result[1]}")
