@@ -14,9 +14,12 @@ The model is trained with [Wisconsin Breast Cancer Dataset](https://www.kaggle.c
 <p>All data are loaded into IDE and all uwanted columns are removed. The labels are encoded by using OneHot label format. The data are then splitted into 80:20 train and test ratio. </p>
 
 ### 3.2 Model Pipeline
-<p>A feedforward neural network is constructed that are specifically catered for binary classification problem. The architecture of the model is shown in figure below.<br>
+<p>A feedforward neural network is constructed that are specifically catered for binary classification problem. The architecture of the model is shown in figure below.</p>
+ 
+ ![model_p1](https://user-images.githubusercontent.com/72061179/165105985-f2d12014-56f1-4cb2-a187-cbfef5048659.png)
 
- The model is trained with batch size of 32 and epochs of 25. After training, thea ccuracy obtained for the model is 99% with validation accuracy of 96%. </p>
+ 
+<p>The model is trained with batch size of 32 and epochs of 25. After training, thea ccuracy obtained for the model is 99% with validation accuracy of 96%. </p>
 
 ## 4. Results
 
